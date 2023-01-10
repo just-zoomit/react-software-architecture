@@ -1,7 +1,7 @@
 import express from 'express';
 import React from 'react';
 import { ServerStyleSheet } from 'styled-components';
-import { renderToString } from 'react-dom/server';
+import { renderToString } from 'react-dom/server'; // Add this
 import { StaticRouter } from 'react-router-dom/server';
 import path from 'path';
 import fs from 'fs';
@@ -30,7 +30,7 @@ app.get('/*', (req, res) => {
 
 		return res.send(
 			data.replace('<div id="root"></div>', `<div id="root">${reactApp}</div>`)
-	
+				.replace('{{ styles }}', sheet.getStyleTags())
 		)
 	});
 });
