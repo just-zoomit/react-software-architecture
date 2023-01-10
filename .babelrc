@@ -1,0 +1,4 @@
+// Tells what present need to be used to run code through babel
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}

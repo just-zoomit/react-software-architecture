@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Babel Packages Install
+
+'''
+npm install --save-dev @babel/core @babel/node @babel/preset-env @babel/preset-react nodemon
+'''
+
+Run Server
+'''
+npx babel-node server.js
+'''
