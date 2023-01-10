@@ -78,4 +78,7 @@ npm install --save-dev @babel/core @babel/node @babel/preset-env @babel/preset-r
 Run Server
 '''
 npx babel-node server.js
+
+//Automatically update
+npx nodemon --exec babel-node server.js 
 '''
