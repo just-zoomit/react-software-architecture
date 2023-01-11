@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { useContext } from "react";
+import { CounterContext } from "./CounterContext";
 
 export const CounterButton = () => {
-  const [numberOfClicks, setNumberOfClicks] = useState(0);
-  const [increment, setIncrement] = useState(1);
+  const { numberOfClicks, increment} = useContext(CounterContext);
 
   return (
     <>
     <p> You have clicked the button {numberOfClicks} </p>
-    <label>
+    {/* <label>
     Increment By: 
     <input 
     value={increment} 
@@ -15,9 +16,9 @@ export const CounterButton = () => {
     type="number" 
      />
    
-    </label>
+    </label> */}
 
-    <button onClick={() => setNumberOfClicks(numberOfClicks + increment)}>
+    <button onClick={() =>  increment()}>
       Clicked 
     </button>
     </>

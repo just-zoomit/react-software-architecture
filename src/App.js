@@ -1,13 +1,16 @@
 import './App.css';
 import { CounterButton } from './CounterButton';
+import { CounterProvider } from './CounterProvider';
 
-function App() {
+
+const App = () => {
   return (
-    <>
-      <h1>State Management Example React App</h1>
-      <CounterButton />
-
-    </>
+ 
+    <CounterProvider>
+        <h1>State Management Example React App</h1>
+        <CounterButton />
+    </CounterProvider>
+  
   );
 }
 
