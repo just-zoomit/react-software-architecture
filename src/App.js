@@ -1,15 +1,16 @@
-import { RecoilRoot } from 'recoil';
-import './App.css';
+import { Provider } from 'react-redux';
+import { store } from './store';
 import { CounterButton } from './CounterButton';
-import { DisplayCount } from './DisplayCount';
+import './App.css';
+
 
 const App = () => {
   return (
  
-    <RecoilRoot >
+    <Provider store={store}>
         <h1>State Management Example React App</h1>
         <CounterButton />
-    </RecoilRoot>
+    </Provider>
   
   );
 }

@@ -1,4 +1,4 @@
-export const counterButtonClicked = {
+export const counterButtonClicked = amount => ({
     type: "COUNTER_BUTTON_CLICKED",
-    payload: { amount: 1 },
-}
+    payload: { amount },
+});
