@@ -3,20 +3,20 @@ import { useContext } from "react";
 import { CounterContext } from "./CounterContext";
 
 export const CounterButton = () => {
-  const { numberOfClicks, increment} = useContext(CounterContext);
+  const { numberOfClicks, increment, incrementBy, setIncrementBy } = useContext(CounterContext);
 
   return (
     <>
     <p> You have clicked the button {numberOfClicks} </p>
-    {/* <label>
+    <label>
     Increment By: 
     <input 
-    value={increment} 
-    onChange={(e) => setIncrement(Number(e.target.value))}
+    value={incrementBy} 
+    onChange={(e) => setIncrementBy(Number(e.target.value))}
     type="number" 
      />
    
-    </label> */}
+    </label>
 
     <button onClick={() =>  increment()}>
       Clicked 
