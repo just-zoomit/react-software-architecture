@@ -1,36 +1,24 @@
-import { useContext, useState} from "react";
-import { CounterContext } from "./CounterContext";
 
-import { useRecoilState,useRecoilValue } from "recoil";
-import { counterState } from "./counterState";
-import { incrementByState } from "./incrementByState";
 
-import { numberOfClicks } from "./numberOfClicks";
+import { useState } from 'react';
 
 export const CounterButton = () => {
-  const numberOfClicksValue= useRecoilValue(numberOfClicks);
-  const [clicksData, setClicksData] = useRecoilState(counterState);
+	const [numberOfClicks, setNumberOfClicks] = useState(0);
+	const [incrementBy, setIncrementBy] = useState(1);
 
-  const [incrementBy, setIncrementBy] = useRecoilState(incrementByState);
-
-  
-
-  return (
-    <>
-    <p> You have clicked the button {numberOfClicksValue} </p>
-    <label>
-    Increment By: 
-    <input 
-    value={incrementBy} 
-    onChange={(e) => setIncrementBy(Number(e.target.value))}
-    type="number" 
-     />
-   
-    </label>
-    <button onClick={() =>  setClicksData([...clicksData,{timestamp: Date.now(), amount: incrementBy}])}>
-      Clicked 
-    </button>
-
-    </>
-  );
+	return (
+		<>
+		<p>You have clicked the button {numberOfClicks} times.</p>
+		<label>
+			Increment By:
+			<input
+				value={incrementBy}
+				onChange={e => setIncrementBy(Number(e.target.value))}
+				type="number" />
+		</label>
+		<button
+			onClick={() => setNumberOfClicks(numberOfClicks + incrementBy)}
+		>Click</button>
+		</>
+	)
 }
