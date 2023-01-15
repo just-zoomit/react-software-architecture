@@ -82,3 +82,13 @@ npx babel-node server.js
 //Automatically update
 npx nodemon --exec babel-node server.js 
 '''
+
+# Steps to Run 
+
+
+1. Install Dependencies :
+   1. npm install
+2. First Build to sync changes:
+   1. npm run build
+3. The run with automatic update with:
+   1.  npx nodemon --exec babel-node server.js 

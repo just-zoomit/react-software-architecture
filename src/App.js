@@ -7,7 +7,7 @@ import { Home } from './pages/Home';
 
 const BigGreenHeading = styled.h1`
 	color: green;
-	font-size: 96px;
+	font-size: 66px;
 `;
 
 function App() {
