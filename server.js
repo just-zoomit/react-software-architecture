@@ -71,7 +71,7 @@ app.get('/*', async (req, res) => {
 		}
 
 		return res.send(
-			data.replace('<div id="root"></div>', `<script>window.preloadedData = ${JSON.stringify(contextObj)};</script><div id="root">${reactApp}</div>`)
+			data.replace('<div id="root"></div>', `<script>window.preloadedArticles = ${JSON.stringify(loadedArticles)};</script><div id="root">${reactApp}</div>`)
 				.replace('{{ styles }}', sheet.getStyleTags())
 		)
 	});
