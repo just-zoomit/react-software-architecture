@@ -7,6 +7,8 @@ import path from 'path';
 import fs from 'fs';
 import App from './src/App';
 
+global.window = {};
+
 const app = express();
 
 app.use(express.static('./build', { index: false }))
