@@ -15,6 +15,7 @@ export const Articles = () => {
 			<div key={article.title}>
 				<h3>{article.title}</h3>
 				<p>by {article.author}</p>
+				
 			</div>
 		))}
 		</>
