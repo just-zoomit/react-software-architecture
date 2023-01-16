@@ -6,7 +6,7 @@ const Card = (props) => (
         <img src="/juice.jpg" alt="Avatar" className={cardstyles.cardImage} />
         <div className={cardstyles.container}>
           <h3>Vitamin Juice <span className={cardstyles.price}>$24.99</span></h3> 
-          <p>Need a jump on your vitamins while drinking? Tired of popping the pills? 
+          <p>Need a jump on your vitamins while drinking? Tired of popping the pills ? 
             Drink our vitamin enhanced juice, available in several flavours.</p>
         </div>
       </div>
