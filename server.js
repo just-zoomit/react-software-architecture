@@ -1,8 +1,8 @@
 import express from 'express';
 import React from 'react';
 import { ServerStyleSheet } from 'styled-components';
-import { renderToString } from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom';
+import { renderToString } from 'react-dom/server'; // Add this
+import { StaticRouter } from 'react-router-dom/server';
 import path from 'path';
 import fs from 'fs';
 import App from './src/App';
@@ -14,14 +14,19 @@ const app = express();
 app.use(express.static('./build', { index: false }))
 
 const articles = [
-	{ title: 'Article 1', author: 'Bob' },
-	{ title: 'Article 2', author: 'Betty' },
-	{ title: 'Article 3', author: 'Frank' },
+	{  title: 'Article 1', author: 'Bod' },
+	{  title: 'Article 2', author: 'Betty' },
+	{  title: 'Article 3', author: 'Frank' },
 ];
 
 app.get('/api/articles', (req, res) => {
-	const loadedArticles = articles;
-	res.json(loadedArticles);
+
+	//Load articles from (would be call to ) database
+	const loadArticles = articles
+
+	//Send the articles as JSON to the client
+	res.json(loadArticles);
+
 });
 
 app.get('/*', (req, res) => {
@@ -41,10 +46,8 @@ app.get('/*', (req, res) => {
 			return res.status(500).send(err);
 		}
 
-		const loadedArticles = articles;
-
 		return res.send(
-			data.replace('<div id="root"></div>', `<script>window.preloadedArticles = ${JSON.stringify(loadedArticles)};</script><div id="root">${reactApp}</div>`)
+			data.replace('<div id="root"></div>', `<div id="root">${reactApp}</div>`)
 				.replace('{{ styles }}', sheet.getStyleTags())
 		)
 	});
