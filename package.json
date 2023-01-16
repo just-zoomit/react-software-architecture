@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://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@github.com/just-zoomit/react-software-architecture.git"
+    "url": "git@github.com/just-zoomit/react-software-architecture.git"
   },
   "author": "Donte",
   "license": "ISC",
